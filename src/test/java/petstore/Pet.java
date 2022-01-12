@@ -12,6 +12,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.CoreMatchers.is;
 
 // 3 parte Classe
 public class Pet {
@@ -28,6 +29,7 @@ public class Pet {
     public void incluirPet() throws IOException{
         String jsonBody = lerJson("db/pet1.json");
 
+        // REST-assured
         // Sintaxe Gherkin
         // Dado - Quando - Então (em Ingles = Given - Whwn - Then)
 
@@ -41,6 +43,8 @@ public class Pet {
                 .log()
                 .all()
                 .statusCode(200)
+                .body("name", is("Max")) //validar além dos números // incluir biblioteca is
+                .body("status", is("available")) //validar
         ;
 
 
