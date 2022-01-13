@@ -1,0 +1,61 @@
+AULA 01
+
+test, qa, quali (procurar em site de pesquisa).. apinfo.com (dice.com(USE))
+procurar no google
+glassdoor.com.br (ver salario pretenção salarial)
+
+bstqb.org.br (certificação)
+>CTFL Foundation level
+>CTFL AT Agile Tester
+
+ISQI.ORG (certificação)
+
+> TESTE foca no produto;
+> QA foca no processo;
+
+> Diferencia de bug site e em APP
+	<site>
+	 < vc tenta outro;
+	 < nova chance.
+
+	<APP>
+	 < vc desinstala;
+	 < alto custo de nova chance (marketing).
+
+> CONHECIMENTO E HABILIDADES
+	< HARD SKILLS ( conecimentos tecnicos)
+		< TESTES - Estrátegias; Técnicas; Processos; Ferramentas; Programação; Automação; Preparação de Massa; Ambiente; Infraestrutura; Telecom; DevOps.
+	< SOLFT SKILLS ( habilidades interpessoais)
+		< Comunicação; Negociação; Aprendizagem (facilidade); Compartilhar;
+===================================================================================
+AULA 02
+ > configurar IJ
+	> new projet
+		> group br.com.iterasys
+		> artitled PetStore
+		> version 1.0-snapshot
+
+          > DEPENDENCIES
+	    > SITE https://mvnrepository.com/    para baixar
+		testImplementation group: 'org.testng', name: 'testng', version: '7.1.0'
+    		testImplementation group: 'io.rest-assured', name: 'rest-assured',
+ version: '4.3.3'
+	    > salvar \ atualizar.
+
+
+	> criar um novo pacote na pasta java, (por boas praticas tem que ser minuscolo e o primeiro sempre é o nome do projeto)
+	>
+=======================================================
+AULA 03
+    > Quando utilizar is de contains:
+        is       devemos utilizar para validar uma palavra ou frase dentro { }
+        contains devemos utilizar para validar uma palavra ou frase dentro [ ]
+
+    >
+MATERIAL PARA ESTUDO
+petstore.swagger.io
+diffnow.com/report
+
+shift+tab para voltar uma palavra para mesma coluna
+
+1201202236

@@ -13,6 +13,7 @@ import java.nio.file.Paths;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.Matchers.contains;
 
 // 3 parte Classe
 public class Pet {
@@ -45,6 +46,8 @@ public class Pet {
                 .statusCode(200)
                 .body("name", is("Max")) //validar além dos números // incluir biblioteca is
                 .body("status", is("available")) //validar
+                .body("category.name", is("Dog")) //validar
+                .body("tags.name", contains("sta")) // validar palavra dentro de outra categoria
         ;
 
 
