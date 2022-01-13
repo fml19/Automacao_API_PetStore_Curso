@@ -79,4 +79,29 @@ public class Pet {
         // sout enter = escrever no final do terminal o token
         System.out.println("O token é " + token);
     }
+    // Alterar pet Upgrade
+    @Test(priority = 3)
+    public void alterarPet() throws IOException {
+
+        String jsonBody = lerJson("db/pet2.json");
+
+        // REST-assured
+        // Sintaxe Gherkin
+        // Dado - Quando - Então (em Ingles = Given - Whwn - Then)
+
+
+                given()
+                        .contentType("application/json")
+                        .log().all()
+                        .body(jsonBody)
+                .when()
+                        .put(uri)
+                .then()
+                        .log().all()
+                        .statusCode(200)
+                        .body("name", is ("Max"))
+                        .body("status", is ("sold"))
+                ;
+
+    }
 }
