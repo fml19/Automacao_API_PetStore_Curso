@@ -18,21 +18,21 @@ import static org.hamcrest.Matchers.contains;
 // 3 parte Classe
 public class Pet {
     // 3.1 Atributos
-    String uri = "https://petstore.swagger.io/v2/pet"; // Endere√ßo da entidade Pet
+    String uri = "https://petstore.swagger.io/v2/pet"; // EndereÁo da entidade Pet
 
-    // 3.2 M√©todos e Fun√ß√µes
+    // 3.2 MÈtodos e FunÁıes
     public String lerJson(String caminhoJson) throws IOException {
         return new String(Files.readAllBytes(Paths.get(caminhoJson)));
     }
 
     // Incluir => Create => Post
-    @Test // Identifica o m√©todo ou fun√ß√£o como um teste para TestNG
+    @Test(priority = 1) // Identifica o mÈtodo ou funÁ„o como um teste para TestNG
     public void incluirPet() throws IOException{
         String jsonBody = lerJson("db/pet1.json");
 
         // REST-assured
         // Sintaxe Gherkin
-        // Dado - Quando - Ent√£o (em Ingles = Given - Whwn - Then)
+        // Dado - Quando - Ent„o (em Ingles = Given - Whwn - Then)
 
         given()
                .contentType("application/json") // comum em API(novas) REST - API(antigas) "text/xml
@@ -44,7 +44,7 @@ public class Pet {
                 .log()
                 .all()
                 .statusCode(200)
-                .body("name", is("Max")) //validar al√©m dos n√∫meros // incluir biblioteca is
+                .body("name", is("Max")) //validar alÈm dos n˙meros // incluir biblioteca is
                 .body("status", is("available")) //validar
                 .body("category.name", is("Dog")) //validar
                 .body("tags.name", contains("sta")) // validar palavra dentro de outra categoria
@@ -52,14 +52,16 @@ public class Pet {
 
 
     }
-    @Test
+    // Consultar =>  => GET
+    @Test(priority = 2)
     public void consultarPet() {
             String petId = "1201202236";
 
         // REST-assured
         // Sintaxe Gherkin
-        // Dado - Quando - Ent√£o (em Ingles = Given - Whwn - Then)
+        // Dado - Quando - Ent„o (em Ingles = Given - Whwn - Then)
 
+            String token =
             given()
                 .contentType("application/json")
                 .log().all()
@@ -71,6 +73,10 @@ public class Pet {
                 .body("name", is ("Max"))
                 .body("status", is("available"))
                 .body("category.name", is("Dog"))
+            .extract()
+                    .path("category.name")
            ;
+        // sout enter = escrever no final do terminal o token
+        System.out.println("O token È " + token);
     }
 }
