@@ -79,7 +79,7 @@ public class Pet {
         // sout enter = escrever no final do terminal o token
         System.out.println("O token é " + token);
     }
-    // Alterar pet Upgrade
+    // Alterar pet Upgrade = Put
     @Test(priority = 3)
     public void alterarPet() throws IOException {
 
@@ -87,7 +87,8 @@ public class Pet {
 
         // REST-assured
         // Sintaxe Gherkin
-        // Dado - Quando - Então (em Ingles = Given - Whwn - Then)
+        // Given indica o contexto, pré requisito da requisição
+        // Dado - Quando - Então (em Ingles = Given (incluir) - When - Then(resposta))
 
 
         given()
@@ -104,7 +105,7 @@ public class Pet {
         ;
 
     }
-    // ExcluirPet
+    // ExcluirPet = delete
     @Test(priority = 4)
     public void excluirPet(){
         String  petId = "1201202236";
